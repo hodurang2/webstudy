@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <style>
+    /* box 크기와 배경 이미지 크기를 동일하게 맞춤 */
+    .box1 {
+      /* 사진을 넣는 새로운 방법 */
+      box-sizing: border-box;
+      width: 192px;
+      height: 128px;
+      background-image: url(../../assets/images/animal10.jpg);
+      background-size: 192px;
+    }
+  </style>
+  <div class="box1"></div>
+  <hr>
+
+  <style>
+    /* box보다 작은 이미지 처리 */
+    .box2 {
+      box-sizing: border-box;
+      width: 500px;
+      height: 380px;
+      border: 1px solid firebrick;
+      background-image: url(../../assets/images/attach1.png);
+      background-repeat: no-repeat;  /* 반복없음 */
+      background-image: auto;        /* 이미지 크기 그대로 사용 */
+      background-position: center;   /* top/bottom(세로 정렬), left/center/right(가로 정렬) */
+    }
+  </style>
+  <div class="box2"></div>
+  <hr>
+
+  <style>
+    /* box보다 큰 이미지 처리 */
+    .box3 {
+      box-sizing: border-box;
+      width: 300px;
+      height: 300px;
+      border: 1px solid black;
+      background-image: url(../../assets/images/light2.png);
+      /* 
+      cover 와 contain의 차이 
+      contain : 이미지를 자르지않고 원본을 유지한채로 최대한 크게 조정해서 표현      
+      cover   : 너비/높이 중 작은 부분을 최대한 여백없이 표시하고 밖으로 나간부분은 자름
+      */
+      /* background-size: contain; */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center; /* 이미지를 늘리거나 자르지 않고 최대한 크게 조정해서 표현 */
+    }
+  </style>
+  <div class="box3"></div>
+
+</body>
+</html>
