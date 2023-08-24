@@ -22,6 +22,7 @@
     }
     .wrap1 > .box3 {
       visibility: hidden; /* 안 보임, 블록 영역은 차지하고 있음 */
+      opacity: 0;
       background-image: url(../../assets/images/flower3.jpg);
     }
     .wrap1 > .box4 {
@@ -41,9 +42,22 @@
   <hr>
 
   <style>
-
+    .wrap2 > div {
+      box-sizing: border-box;
+      width: 192px;
+      height: 128px;
+      
+    }
+    .wrap2 img {
+      /* visibility: hidden; */
+      opacity: 0.05; /* 투명도 0 : 안보임 */
+    }
+    .wrap2 > div:hover > img {
+      /* visibility: visible; */
+      opacity: 1; /* 투명도 1 :  보 임 */
+    }
   </style>
-  <div class="wrap1">
+  <div class="wrap2">
     <div class="box1">
       <img src="../../assets/images/flower1.jpg" width="192px" height="128px">
     </div>
