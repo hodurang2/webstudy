@@ -14,8 +14,10 @@
       box-sizing: border-box;
       width: 192px;
       height: 128px;
-      background-image: url(../../assets/images/animal10.jpg);
-      background-size: 192px;
+
+      /* background-image: url(../../assets/images/animal10.jpg);
+      background-size: 192px; */
+      background: url(../../assets/images/animal10.jpg) right/192px ; /* 단축속성 : 위치(positiobn)/크기(size) */
     }
   </style>
   <div class="box1"></div>
@@ -57,6 +59,53 @@
     }
   </style>
   <div class="box3"></div>
+  <hr>
+
+  <style>
+    .box4 {
+      box-sizing: border-box;
+      width: 115px;
+      height: 115px;
+      background-image: url(../../assets/images/weather.png);
+      background-position: 115.8% 0%;
+    }
+    .logo {
+      box-sizing: border-box;
+      width: 120px;
+      height: 120px;
+      background-image: url(../../assets/images/logo.png);
+      /* background-position: 100% 30%; */
+      background-position: 120px -180px;
+    }
+  </style>
+  <div class="box4"></div>
+  <div class="logo"></div>
+  <hr>
+
+  <style>
+    .box6 {
+      box-sizing: border-box;
+      width: 640px;
+      height: 480px;
+      background-image: url(../../assets/images/architecture2.jpg);
+      background-size: 640px 480px; /* =background-size: 100% */
+      background: url(../../assets/images/architecture2.jpg) center/640px 480px darkgoldenrod;
+      /* background-color: darkgoldenrod;  */
+      background-blend-mode: multiply; 
+
+
+
+      font-size: 80px;
+      font-weight: 900;
+      color: white;
+      text-align: center; /* 가로 가운데 정렬 */
+      /* padding-top: 200px; */
+      line-height: 480px; /* box의 height와 line-height가 동일하면 세로 가운데 정렬 효과가 나타난다. (1줄만 가능) */
+      color: firebrick;
+    }
+  </style>
+  <div class="box6">우와</div>
+
 
 </body>
 </html>
