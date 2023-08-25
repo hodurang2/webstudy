@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <style>
+    /* 
+      float 속성
+      1. HTML 요소들은 기본 배치를 가진다.
+        1) 위에서 아래 방향으로 배치한다.
+        2) 왼쪽에서 오른쪽 방향으로 배친한다.
+        3) 블록 요소는 각 라인을 각각 차지하고, 인라인요소는 라인의 포함된다.
+      2. HTML 기본 배치를 무시하고 새롭게 배치된다.
+        1) 왼쪽에 배치할 수 있다.
+        2) 오른쪽에 배치할 수 있다.
+    */
+    .wrap1 > div {
+      box-sizing: border-box;
+      width: 50px;
+      height: 50px;
+      border: 1px solid gray;
+      line-height: 50px;
+      text-align: center;
+    }
+    .wrap1 > .box1 {
+      float: left;
+    }
+    .wrap1 > .box2 {
+      float: left;
+    }
+  </style>
+  <div class="wrap1">
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et dignissim lorem. Sed scelerisque, lacus at lobortis dictum, sem nisl tristique mi, in elementum turpis nunc vitae quam. Donec erat ligula, dapibus ac sapien quis, tincidunt facilisis felis. Curabitur vitae nibh ut erat faucibus imperdiet eget consequat felis. Proin facilisis tellus leo. Etiam eu nunc nec ex rutrum tincidunt. Donec ultricies quis augue ac ullamcorper. Sed non vehicula turpis, in ullamcorper quam. Aliquam iaculis ipsum in leo vehicula venenatis. Duis venenatis ligula orci, vitae consequat justo porttitor eu. Quisque vitae odio in nulla posuere bibendum a eget nunc. Integer et malesuada nisl. Vestibulum odio turpis, luctus et commodo non, ultricies non mauris. Cras rutrum vulputate vulputate.
+  </div>
+  <hr>
+
+  <style>
+    .wrap2 > div {
+      box-sizing: border-box;
+       width: 300px;
+       height: 300px;
+      border: 1px solid gray;
+    }
+    .wrap2 > .box1 {
+      float: left;
+    }
+    .wrap2 > .box2 {
+      float: left;
+    }
+    .wrap2 > .box3 {
+      /* float 요소의 영역에서 벗어나시오. (left, right, both) */
+      clear: left; /* float: left;에서 벗어나시오 */
+    }
+  </style>
+  <div class="wrap2">
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+  </div>
+
+</body>
+</html>
