@@ -6,6 +6,7 @@
   <title>Document</title>
 </head>
 <body>
+  
 
   <style>
     /* CSS 초기화 */
@@ -23,56 +24,91 @@
       border: 1px solid gray;
     }
   </style>
-
+  
 
   <style>
-    /* 
+    /*
       1. position: static;
         1) 디폴트, 생략 가능
         2) HTML 기본 배치를 따른다.
-        3) 위치 조정(topm bottom, left, right)이 불가능하다.
+        3) 위치 조정(top, bottom, left, right)이 불가능하다.
     */
-    .wrap1 a
+
+    .wrap1 {
+      width: 500px;
+    }
     .wrap1 > div {
       position: static;
       top: 50px;  /* 위에서 50px 떨어뜨리기(아래로 50px 이동하기) */
-      left: 50px; /* 왼쪽에서 50px 떨어뜨리기(ss) */
+      left: 50px; /* 왼쪽에서 50px 떨어뜨리기(오른쪽으로 50px 이동하기) */
     }
+
   </style>
+
   <div class="wrap1">
     <div>box</div>
   </div>
+
+
   <hr>
-  
-  
-  <style>
-    /*
-      2. position: relative
-      1) HTML 기본 배치를 따른다,.
-      2) 위치 저장( top q
-      */
-      .wrap2 {
-        width: 500px;
-      }
-      </style>  
-
-
-
-
 
 
   <style>
+
     /*
-      3 position: absolute
-        1) HTML 기본 배치를 따르지 않는다.
-        2) 부머 요소를 기준 위치(top, bottom, left, right)
+      2. position: relative;
+        1) HTML 기본 배치를 따른다.
+        2) 위치 조정(top, bottom, left, right)이 가능하다.
+        3) HTML 기본 배치를 기준으로 위치가 조정된다.
     */
+
+    .wrap2 {
+      width: 500px;
+    }
+    .wrap2 > div {
+      position: relative;
+      left: 50px;
+    }
 
   </style>
 
   <div class="wrap2">
-    <div>box2</div>
+    <div>box</div>
   </div>
+
+
+  <hr>
+
+
+  <style>
+
+    /*
+      3. position: absolute;
+        1) HTML 기본 배치를 따르지 않는다.
+        2) 부모 요소를 기준으로 위치 조정(top, bottom, left, right)이 가능하다.
+        3) 부모 요소가 position: static;이 아닌 경우에 동작 가능하다.
+    */
+
+    .wrap3 {
+      width: 300px;
+      height: 300px;
+      position: relative;
+    }
+    .wrap3 > div {
+      position: absolute;
+      right: 50px;
+    }
+
+  </style>
+
+  <div class="wrap3">
+    <div>box</div>
+  </div>
+
+
+  <hr>
+
+
 
   <style>
     /* 
