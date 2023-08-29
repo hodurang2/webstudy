@@ -13,7 +13,7 @@
       2. HTML 구성 요소(HTMLElement)를 객체(Object)로 저장하고 처리할 수 있는 방식이다.
       3. HTML 구성 요소(HTMLElement) 알아내기
         1) id 속성으로 알아내기
-          var 변수 = documnet.getElementById('아이디')
+          var 변수 = document.getElementById('아이디')
         2) class 속성으로 알아내기
           var 배열 = document.getElementsByClassName('클래스')
         3) tag 이름으로 알아내기
@@ -26,11 +26,6 @@
     */ 
   </script>
 
-  <script>
-    var box1 = document.getElementById('box1');
-    console.log(box1);
-  </script>
-
   <div class="wrap">
     <div id="box1" class="primary_box">box1</div>
     <div id="box2" class="primary_box">box2</div>
@@ -38,7 +33,6 @@
   </div>
 
   <script>
-
     // id 속성
     var box1 = document.getElementById('box1');
     console.log(box1);
