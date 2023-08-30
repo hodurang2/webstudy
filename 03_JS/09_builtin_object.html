@@ -68,7 +68,7 @@
 
 
     
-
+  <!-- 문제1. 시계만들기 -->
   <style>
     .warning {
       color: crimson;
@@ -109,6 +109,40 @@
       }
     }, 1000);
     
+  </script>
+
+  <!-- 문제2. 디데이 -->
+  <!-- 1일 이상 남은 경우 : D-DAY 70일 15:10 -->
+  <!-- 1일 미만 남은 경우 : D-DAY 15:10 -->
+  <!-- 디데이가 지난 경우 : D-DAY 입니다. -->
+  <div id="dday"></div>
+  <script>
+    
+    setInterval(function(){
+
+      var now = new Date();               // 2023-08-30
+      var dday = new Date(2018, 6, 8);  // 2023-11-16
+      
+      var timestamp = dday.getTime() - now.getTime();  // dday - now로 계산해도 타임스탬프 결과가 나옴
+      var totalSecond = parseInt(timestamp / 1000);  // 밀리초를 초 단위로 변환함(parseInt : 소수점 제거됨)
+      var restDay = parseInt(totalSecond / 60 / 60 / 24);
+      var restHour = parseInt(totalSecond / 60 / 60) % 24;
+      var restMinute = parseInt(totalSecond / 60) % 60;
+  
+      var str = 'D-DAY&nbsp;';
+      if(totalSecond > 0){
+        if(restDay >= 1){
+          str += restDay + '일&nbsp;';
+        }
+        str += String(restHour).padStart(2, '0') + ':' + String(restMinute).padStart(2, '0');
+      } else {
+        str += '입니다.';
+      }
+  
+      document.getElementById('dday').innerHTML = '<h1>' + str + '</h1>';
+
+    }, 1000);
+
   </script>
 
 
