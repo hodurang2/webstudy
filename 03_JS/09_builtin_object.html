@@ -7,6 +7,7 @@
 </head>
 <body>
 
+  <!-- JSON -->
   <script>
     /*
       JSON 내장 객체
@@ -30,6 +31,7 @@
 
   </script>
 
+  <!-- DATE -->
   <script>
 
     /*
@@ -66,8 +68,142 @@
 
   </script>
 
+  <!-- String -->
+  <script>
 
+    /* String 내장 객체 */
+    var str = 'JavaScript';
+
+    // 1. 문자열의 길이
+    console.log(str.length);
+
+    // 2. 특정 문자(지정된 인덱스에 위차하는 문자)
+    console.log(str.charAt(0)); // 처음
+    console.log(str.charAt(str.length - 1)); // 끝
+
+
+    // 3. 특정 문자열
+    console.log(str.substring(0, 4)); //     'Java' : 인덱스 0 이상 ~ 4 미만
+    console.log(str.substring(4));    //   'Script' : 인덱스 4 이상 ~ 끝까지
+    console.log(str.slice(0, 4));     //     'Java' : 인덱스 0부터 4개
+    console.log(str.slice(4));        //   'Script' : 인덱스 4부터 끝까지
+    console.log(str.slice(-10, -6));  //     'Java' : 인덱스 -10부터 -6미만까지(-5까지)
+    console.log(str.slice(-6));       //   'Script' : 인덱스 -6포함 끝까지
+
+    // 4. 문자열 연결
+    console.
+    log(str.concat(', ', 'Hello World'))
+
+    // 5. 특정 패턴으로 시작/특정 패턴으로 끝나는지 검사
+    console.log(str.startsWith('Java'));  // 'Java'로 시작하면 true
+    console.log(str.endsWith('Script'));  // 'Script'로 시작하면 true
+
+    // 6. 특정 문자열의 위치(인덱스) 찾기
+    console.log(str.indexOf('a'));      // 'JavaScript'에서 발견된 첫번째 a의 인덱스 반환 -> 1
+    console.log(str.lastIndexOf('a'));  // 'JavaScript'에서 발견된 마지막 a의 인덱스 반환 -> 3
+
+    // 7. 특정 문자열을 주어진 길이가 될 때까지 채우기 
+    console.log(str.substring(0, 4).padEnd(10, '*'));   // 'Java******'
+    console.log(str.substring(4).padStart(10, '*'));      // '******Java'
+
+    // 8. 주어진 횟수만큼 반복하기
+    console.log(str.repeat(3));
+
+    // 9. 찾아 바꾸기
+    var str = '192.168.0.101';
+    console.log(str.replace('.', '_'));   // '192.168.0.101' -> '192_168_0_101' 변경
+    console.log(str.replaceAll('.', '_'));   // '192.168.0.101' -> '192_168_0_101' 변경
+
+    // 10. 대소문자 변환하기
+    var str = 'JavaScript';
+    console.log(str.toLowerCase());   // 'JavaScript' -> 'javascript'
+    console.log(str.toUpperCase());   // 'javascript' -> 'JavaScript'
+
+    // 11. 문자열 앞뒤로 포함된 불필요한 공백 제거하기
+    var str = '   Java       Script       ';
+    console.log('[' + str.trim() + ']');
+    console.log('[' + str.trimStart() + ']');
+    console.log('[' + str.trimEnd() + ']');
+
+    // 12. 문자열 객체의 문자열 값 반환
+    var str = new String('JavaScript');
+    console.log(str);           // 객체 {'JavaScript'}
+    console.log(str.valueOf);   // 문자열 'JavaScript'
+
+    // 13. 문자열을 분리해서 배열로 만들기
+    var str = 'Hello tom Nice to meet you!';
+    var words = str.split(' '); // words = ['Hello', 'tom', 'Nice', 'to', 'meet', 'you!']
+    console.log(words[1]);  
+
+  </script>
+
+  <!-- Array -->
+  <script>
+
+    /* Array 내장 객체 */ 
+    var array = ['여행', '운동', '영화'];
     
+    // 1. 반복 메소드
+    array.forEach(function(element){
+      console.log(element);
+    })
+    array.forEach(function(element, i){
+      console.log(i + ':' + element)
+    })
+
+    // 2. 필터 (지정한 조건을 만족하는 요소만 남긴 배열 만들기)
+    // array.filter((요소) => 요소 검사);
+    var result = array.filter((element) => element.length > 6);     // 길이가 6보다 큰 요소만 남긴 배열 반환
+    console.log(result);
+
+    // 3. 배열 요소를 변경하기
+    // array.map((요소) => 변경할 값)
+    var array = [1, 2, 3, 4, 5];
+    var map = array.map((element) => element ** 2);  // 모든 요소를 2제곱 값으로 바꾼 배열 반환
+    console.log(map);
+
+    // 4. 배열 요소를 합쳐서 반환하기
+    var array = ['travel', 'fitness', 'movie', 'tracking', 'fising'];
+    console.log(array.join());      // 콤마(,)로 연결 (디폴트)
+    console.log(array.join(' '));   // ' '로 연결
+
+
+  </script>
+    
+  <!-- Math -->
+  <script>
+
+    /* Math 내장 함수 */ 
+    console.log(Math.abs(-10));           //  5 , -5의 절대값
+
+    console.log(Math.ceil(7.1));          //  8 , 7.1의 정수 올림값
+    console.log(Math.ceil(-7.1));         // -7 , -7.1의 정수 올림값
+
+    console.log(Math.floor(7.1));         //  7 , 7.1의 정수 내림값
+    console.log(Math.floor(-7.1));        // -8 , -7.1의 정수 내림값
+
+    console.log(Math.round(7.1));         //  7 , 7.1의 정수 반올림
+    console.log(Math.round(-7.1));        // -7 , -7.1의 정수 반올림
+
+    console.log(Math.trunc(7.1));         //  7 , 7.1의 소수점 절사
+    console.log(Math.trunc(-7.1));        // -7 , -7.1의 소수점 절사
+
+    console.log(Math.max(1, 2, 3, 4, 5)); //  5 , 주어진 값중 가장 큰 값
+    console.log(Math.min(1, 2, 3, 4, 5)); //  1 , 주어진 값중 가장 작은 값
+
+    var array = [1, 2, 3 ,4, 5];
+    console.log(Math.max(array));
+    console.log(Math.min(array));
+
+    console.log(Math.pow(2, 3));          //  8 , 2의 3제곱
+
+    console.log(Math.random());           // 0 ~ 1 사이 난수 생성
+
+    console.log(Math.sqrt(25));           //  5 , 루트25
+
+  </script>
+
+
   <!-- 문제1. 시계만들기 -->
   <style>
     .warning {
@@ -145,6 +281,34 @@
 
   </script>
 
+  <!-- 문제3. 정수 난수 발생기 -->
+  <!-- getRandomInt(2, 5) : 2부터 5개(2, 3, 4, 5, 6) 중 하나의 난수를 반환하는 함수 -->
+  <script>
+    function getRandomInt(start, leng){
+      let value = parseInt((Math.random() * (leng) + start));
+      return value;
+    }
 
+    console.log(getRandomInt(2, 5));
+  </script>
+
+  <!-- 문제4. 올림 함수를 자리수 지정이 가능하도록 커스터 마이징 하기 -->
+  <script>
+    function ceil(number, digit){
+      // if(digit)
+      return Math.ceil(number * (10**digit)) / 10**digit;
+      
+    }
+    console.log(ceil(555.555, 4));
+    console.log(ceil(555.555, 3));
+    console.log(ceil(555.555, 2));
+    console.log(ceil(555.555, 1));
+    console.log(ceil(555.555, 0));
+    console.log(ceil(555.555, -1));
+    console.log(ceil(555.555, -2));
+    console.log(ceil(555.555, -3));
+    console.log(ceil(555.555, -4));
+
+  </script>
 </body>
 </html>
