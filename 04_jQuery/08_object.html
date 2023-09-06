@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../assets/js/lib/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  
+  <div id="box"></div>
+  <script>
+
+    // 객체 생성
+    var obj = {
+      'name' : '홍길동',
+      'age' : 30
+    };
+
+    // 속성(프로퍼티) 추가 extend() 메소드
+    $.extend(
+      obj,      // 객체 obj에 속성을 추가하겠다.
+      {
+        'mobile': '010-1111-1111',
+        'address': 'seoul'
+      }
+    )
+
+    // 속성(프로퍼티) 순회 each() 메소드
+    
+    // 1. 속성만 순회하기
+    $.each(obj, function(p){
+      console.log(p, obj.p, obj[p]);
+    })
+    
+    // 2.  속성과 값 순회
+    $.each(obj, function(p, value){
+      console.log(p, value);
+    })
+
+    // name
+    //   홍길동
+    // age
+    //   30
+    // mobile
+    //   010-1111-1111
+    // address
+    //   seoul
+    // <dl> -> box
+    
+  </script>
+
+  <dl>
+    <dt>name</dt>
+    <dd>홍길동</dd>
+    <dt>age</dt>
+    <dd>30</dd>
+    <dt>mobile</dt>
+    <dd>010-1111-1111</dd>
+    <dt>address</dt>
+    <dd>seoul</dd>
+  </dl> 
+  $.each(obj, function(p, vlalue))
+  <script>
+
+  </script>
+</body>
+</html>
+
